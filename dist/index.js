@@ -40,3 +40,34 @@ let c2 = {
 };
 console.log(c1);
 console.log(c2);
+class User {
+    constructor(customer) { }
+}
+const newUser = new User(c1);
+const product = {
+    title: "lemon",
+    price: 3,
+    desc: "this is a great product"
+};
+function addToCart(product) {
+    console.log('add to cart', product);
+}
+addToCart(product);
+const product2 = {
+    title: "apple",
+    price: 2,
+    desc: "this is a great product",
+    qty: 30,
+    status: "low"
+};
+class AppCustomer {
+    constructor(name, age) {
+        this.name = "";
+        this.name = name;
+    }
+    welcome() {
+        console.log('hello', this.name);
+    }
+}
+const myCostumer = new AppCustomer("ismail", 66);
+myCostumer.welcome();

@@ -53,3 +53,47 @@ let c2:Customer={
 console.log(c1);
 console.log(c2);
 
+class User {
+    constructor(customer:Customer){}
+}
+const newUser:User=new User(c1);
+
+interface Product {
+    title: string,
+    price: number,
+    desc: string
+}
+const product: Product = {
+    title:"lemon",
+    price:3,
+    desc:"this is a great product"
+}
+function addToCart(product: Product):void{
+    console.log('add to cart', product);
+}
+addToCart(product);
+
+interface ProductStock{
+    qty:number,
+    status: string
+}
+type shopProduct = Product | ProductStock;
+const product2: shopProduct = {
+    title:"apple",
+    price:2,
+    desc:"this is a great product",
+    qty:30,
+    status:"low"
+}
+
+class AppCustomer {
+    name:string = ""
+    constructor(name: string, age: number){
+        this.name=name
+    }
+    welcome(){
+        console.log('hello', this.name);
+    }
+}
+const myCostumer = new AppCustomer("ismail", 66);
+myCostumer.welcome();
