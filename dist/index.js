@@ -63,7 +63,9 @@ const product2 = {
 class AppCustomer {
     constructor(name, age) {
         this.name = "";
+        this.age = 0; // we have also protected
         this.name = name;
+        this.age = age;
     }
     welcome() {
         console.log('hello', this.name);
@@ -71,3 +73,10 @@ class AppCustomer {
 }
 const myCostumer = new AppCustomer("ismail", 66);
 myCostumer.welcome();
+class AppMember extends AppCustomer {
+    constructor(name, age, isMember = false) {
+        super(name, age);
+        this.isMember = false;
+        isMember = isMember;
+    }
+}

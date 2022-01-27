@@ -87,9 +87,11 @@ const product2: shopProduct = {
 }
 
 class AppCustomer {
-    name:string = ""
+    public name:string = "";
+    private age: number = 0; // we have also protected
     constructor(name: string, age: number){
-        this.name=name
+        this.name=name;
+        this.age=age
     }
     welcome(){
         console.log('hello', this.name);
@@ -97,3 +99,22 @@ class AppCustomer {
 }
 const myCostumer = new AppCustomer("ismail", 66);
 myCostumer.welcome();
+
+class AppMember extends AppCustomer{
+    isMember= false;
+    constructor(name: string, age: number, isMember: boolean = false){
+        super(name, age);
+        isMember=isMember;
+    }
+
+    // this is a private var, we cannot access it 
+    // getAge(){
+    //     console.log(this.age)
+    // }
+}
+
+interface ProductManagement {
+    getQty(qty: number):number,
+    isVisible(): Boolean,
+    getPromoCode(percent: number):string
+}
